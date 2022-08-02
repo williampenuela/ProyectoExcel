@@ -17,10 +17,10 @@ namespace ResultadoExcel.Service
             return _dbContext.ENE_Combustible.ToList();
         }
 
-        public List<ENE_Combustible> SaveCombustibles(List<ENE_Combustible> combustibles)
+        public List<ENE_Combustible> SaveCombustibles(List<ENE_Combustible> ENE_Combustible)
         {
-            _dbContext.BulkInsert(combustibles);
-            return combustibles;
+            _dbContext.BulkInsert(ENE_Combustible);
+            return ENE_Combustible;
         }
     }
 }

@@ -23,9 +23,9 @@ namespace ResultadoExcel.Controllers
             return View();
         }
 
-        public JsonResult SaveCombustibles (List<ENE_Combustible> ENE_Combustibles)
+        public JsonResult SaveCombustibles (List<ENE_Combustible> ENE_Combustible)
         {
-            _ENE_Combustible = _ENE_CombustibleService.SaveCombustibles(ENE_Combustibles);
+            _ENE_Combustible = _ENE_CombustibleService.SaveCombustibles(ENE_Combustible);
             return Json(_ENE_Combustible);
         }
 

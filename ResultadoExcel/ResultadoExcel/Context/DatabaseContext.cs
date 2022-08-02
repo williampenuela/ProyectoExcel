@@ -7,7 +7,7 @@ namespace ResultadoExcel.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            var connectionString = string.Format(@"Data Source=NIX\BIT_DESA;Initial Catalog=Bit_V3;Integrated Security=True");
+            var connectionString = string.Format(@"Data Source=NIX\BIT_DESA;Initial Catalog=William;Integrated Security=True");
             options.UseSqlServer(connectionString);
         }
         public DbSet<ENE_Combustible>? ENE_Combustible { get; set; }

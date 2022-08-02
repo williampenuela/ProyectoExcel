@@ -13,7 +13,7 @@ namespace ResultadoExcel.Models
             for (int i = 0; i < props.Count; i++)
             {
                 PropertyDescriptor prop = props[i];
-                if(prop.Name == "Fecha_Creacion" || prop.Name == "Estado")
+                if(prop.Name == "Fecha_Creacion")
                 {
                     table.Columns.Add(prop.Name);
                 }

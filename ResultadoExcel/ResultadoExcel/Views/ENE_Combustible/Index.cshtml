@@ -116,9 +116,20 @@
                             var propName = _headers[valueIndex];
                             _oCombustible[propName] = propValue;
 
-                            sTemp += "<td style='text-align:center;vertical-align:middle;' title='" + _headers[valueIndex] + "'>" + propValue + "</td>";
+                            if (_headers[valueIndex]=="Estado"){
+                                if(propValue){
+                                    sTemp += "<td style='text-align:center;vertical-align:middle;' title='" + _headers[valueIndex] + "'>" + 1 + "</td>";       
+                                }
+                                else{
+                                    sTemp += "<td style='text-align:center;vertical-align:middle;' title='" + _headers[valueIndex] + "'>" + 0 + "</td>";
+                                }
+                            }
+                            else{
+                                sTemp += "<td style='text-align:center;vertical-align:middle;' title='" + _headers[valueIndex] + "'>" + propValue + "</td>";
+                            }
                             valueIndex++;
                         }
+
                         sTemp += "</tr>"; 
                         $("#tblMain tbody").append(sTemp);
 
@@ -150,7 +161,7 @@
                     ajaxRequest.done(function (data) {
                         alert("Guardado Exitoso.");
                     });
-                    ajaxRequest.fail(function (jqXHR, textStatus) { alert("Error Found"); alerts('error title', 'error info', 'error'); });
+                    ajaxRequest.fail(function (jqXHR, textStatus) { alert("Error Found"); alerts('Error titulo', 'Error info', 'Error'); });
                 }
                 else {
                     alert("Sin datos encontrados.");

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5xZ4WHYSmuklb/OGrVLC0YMaR7DwT8dZit/A0k8fH22iWwjmQWPThBgGHKfckZ69uQncxWl24Uyb1hB3nf3OxA==",
+  "dgSpecHash": "OdCUz+3d/ndJx5PBzfOhJDRk2fpjmQX1Jhb2dkjwSkuj3kaDqg+mDsxm7kho27BLbhpf9waIxTIIODybY8HJXQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\pasante.desarrollo1\\Desktop\\ResultadoExcel\\ResultadoExcel\\ResultadoExcel.csproj",
+  "projectFilePath": "C:\\Users\\pasante.desarrollo1\\Desktop\\git\\Excel\\ResultadoExcel\\ResultadoExcel\\ResultadoExcel.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pasante.desarrollo1\\.nuget\\packages\\efcore.bulkextensions\\5.3.7\\efcore.bulkextensions.5.3.7.nupkg.sha512",
     "C:\\Users\\pasante.desarrollo1\\.nuget\\packages\\epplus\\5.7.3\\epplus.5.7.3.nupkg.sha512",
