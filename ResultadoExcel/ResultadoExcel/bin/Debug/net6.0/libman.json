@@ -8,6 +8,13 @@
       "files": [
         "jquery.min.js"
       ]
+    },
+    {
+      "library": "exceljs@4.3.0",
+      "destination": "wwwroot/exceljs/",
+      "files": [
+        "exceljs.min.js"
+      ]
     }
   ]
 }

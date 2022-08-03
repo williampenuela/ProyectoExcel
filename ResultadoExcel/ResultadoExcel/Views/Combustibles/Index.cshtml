@@ -7,6 +7,9 @@
 
 <script src="~/jquery/jquery.min.js"></script>
 <button id="btnDownloadExcel" class="btn btn-success" style="margin-right:5px;">Descargar Excel</button>
+<a href="~/docs/plantilla.xlsx" download="Modelo Archivo Plano Ventas Teseo">
+    <button id="btnDownloadExcel" class="btn btn-secondary" style="margin-right:5px;">Descargar Plantilla</button>
+</a>
 <hr />
 
 <div style="margin-bottom:20px;">
@@ -14,7 +17,7 @@
     <button id="btnSave" class="btn btn-primary" style="float:right;margin-right:10px;">Guardar</button>
 </div>
 
-<table id="tblMain" class="table table-bordered table-striped">
+<table id="tblMain" class="table table-bordered table-striped table-responsive">
     <thead ></thead>
     <tbody ></tbody>
 </table>
@@ -30,7 +33,6 @@
 
         function Init() {
             _oCombustible = NewCombustibleObj();
-
             $("#btnDownloadExcel").click(function () {
                 GenerateAndDownloadExcel();
             });
@@ -39,7 +41,6 @@
                     Save();
                 });
                 
-
                 $("#input").on("change", function (e) {
                     var file = e.target.files[0];
                     if (!file) return;
@@ -64,7 +65,7 @@
                 combustible = ""
 
                 $.ajax({
-                    url: "../ENE_Combustible/GenerateAndDownloadExcel?IdCombustible=" + IdCombustible + "&combustible=" + combustible,
+                    url: "../Combustibles/GenerateAndDownloadExcel?IdCombustible=" + IdCombustible + "&combustible=" + combustible,
                     //data: { 'Id': groupId },
                     type: 'GET',
                     success: function (result) {
@@ -150,9 +151,9 @@
             function Save() {
                 if (_oCombustibles.length > 0) {
                     var ajaxRequest = $.ajax({
-                        url: "../ENE_Combustible/SaveCombustibles/",
+                        url: "../Combustibles/SaveCombustibles/",
                         type: "POST",
-                        data: { ENE_Combustible: _oCombustibles },
+                        data: { combustibles: _oCombustibles },
                         dataType: "json",
                         beforeSend: function () {
 
@@ -174,13 +175,16 @@
                     Km_Actual: 0,
                     Cantidad_Suministro: "",
                     Odometro_Dañado:  0,
-                    //Evidencia: "",
+                    Evidencia: "",
                     Usuario_Creacion: 0,
                     Fecha_Creacion: 0,
                     Estado : 0,
                     Id_Surtidor : 0,
                     Estado_Tapa : 0,
-                    Id_Apertura : 0
+                    Id_Apertura : 0,
+                    Id_EDS_Pendiente_Actualizacion : 0,
+                    Usuario_Insercion : 0,
+                    Id_Eds_Tipo_Insercion : 0
                 };
                 return oCombustible;
             }   

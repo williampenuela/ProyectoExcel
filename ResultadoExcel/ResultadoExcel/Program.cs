@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<DatabaseContext>();
-builder.Services.AddScoped<IENE_CombustibleService, ENE_CombustibleService>();
+builder.Services.AddScoped<ICombustibleService, CombustibleService>();
 
 var app = builder.Build();
 
@@ -27,6 +27,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=ENE_Combustible}/{action=Index}/{id?}");
+    pattern: "{controller=Combustibles}/{action=Index}/{id?}");
 
 app.Run();

@@ -10,6 +10,6 @@ namespace ResultadoExcel.Context
             var connectionString = string.Format(@"Data Source=NIX\BIT_DESA;Initial Catalog=William;Integrated Security=True");
             options.UseSqlServer(connectionString);
         }
-        public DbSet<ENE_Combustible>? ENE_Combustible { get; set; }
+        public DbSet<Combustible>? ENE_Combustible { get; set; }
     }
 }

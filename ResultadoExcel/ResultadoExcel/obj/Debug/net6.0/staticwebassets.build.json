@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "VyiVj1oerlSDsvivqPbL7V0wh3Aqa8/+vn/LMVbb0MY=",
+  "Hash": "q2MuIBVrbbZL3vMbxZFAe0vlMpWI9MaXm1I6VDjZ+dM=",
   "Source": "ResultadoExcel",
   "BasePath": "_content/ResultadoExcel",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\pasante.desarrollo1\\Desktop\\git\\Excel\\ResultadoExcel\\ResultadoExcel\\wwwroot\\docs\\plantilla.xlsx",
+      "SourceId": "ResultadoExcel",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\pasante.desarrollo1\\Desktop\\git\\Excel\\ResultadoExcel\\ResultadoExcel\\wwwroot\\",
+      "BasePath": "_content/ResultadoExcel",
+      "RelativePath": "docs/plantilla.xlsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\docs\\plantilla.xlsx"
     },
     {
       "Identity": "C:\\Users\\pasante.desarrollo1\\Desktop\\git\\Excel\\ResultadoExcel\\ResultadoExcel\\wwwroot\\favicon.ico",

@@ -19,7 +19,15 @@ namespace ResultadoExcel.Models
                 }
                 else
                 {
-                    table.Columns.Add(prop.Name, prop.PropertyType);
+                    if(prop.Name == "Id_EDS_Pendiente_Actualizacion"|| prop.Name == "Usuario_Insercion"|| prop.Name == "Id_Eds_Tipo_Insercion")
+                    {
+                        table.Columns.Add(prop.Name);
+                    }
+                    else
+                    {
+                        table.Columns.Add(prop.Name, prop.PropertyType);
+                    }
+
                 }   
             }
             object[] values = new object[props.Count];

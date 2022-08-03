@@ -6,15 +6,15 @@ using ResultadoExcel.Service;
 
 namespace ResultadoExcel.Controllers
 {
-    public class ENE_CombustibleController : Controller
+    public class CombustiblesController : Controller
     {
-        IENE_CombustibleService _ENE_CombustibleService = null;
-        List<ENE_Combustible> _ENE_Combustible = new List<ENE_Combustible>();
+        ICombustibleService _combustibleService = null;
+        List<Combustible> _combustibles = new List<Combustible>();
 
 
-        public ENE_CombustibleController(IENE_CombustibleService ENE_CombustibleService)
+        public CombustiblesController(ICombustibleService ENE_CombustibleService)
         {
-            _ENE_CombustibleService = ENE_CombustibleService;
+            _combustibleService = ENE_CombustibleService;
         }
 
 
@@ -23,15 +23,15 @@ namespace ResultadoExcel.Controllers
             return View();
         }
 
-        public JsonResult SaveCombustibles (List<ENE_Combustible> ENE_Combustible)
+        public JsonResult SaveCombustibles (List<Combustible> ENE_Combustible)
         {
-            _ENE_Combustible = _ENE_CombustibleService.SaveCombustibles(ENE_Combustible);
-            return Json(_ENE_Combustible);
+            _combustibles = _combustibleService.SaveCombustibles(ENE_Combustible);
+            return Json(_combustibles);
         }
 
         public string GenerateAndDownloadExcel (int IdCombustible, string combustible)
         {
-            List<ENE_Combustible> ENE_Combustibles = _ENE_CombustibleService.GetCombustibles();
+            List<Combustible> ENE_Combustibles = _combustibleService.GetCombustibles();
             var datatable = CommonMethods.ConvertListToDataTable(ENE_Combustibles);
             datatable.Columns.Remove("Id_Combustible");
 
@@ -123,6 +123,38 @@ namespace ResultadoExcel.Controllers
                 ws.Cells["A3:D3"].Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.SkyBlue);
                 ws.Cells["A3:D3"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
                 ws.Cells["A3:D3"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+
+                ws.Cells["A3"].LoadFromDataTable(datatable, true);
+                ws.Cells["A3:K3"].Style.Font.Bold = true;
+                ws.Cells["A3:K3"].Style.Font.Size = 12;
+                ws.Cells["A3:K3"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                ws.Cells["A3:K3"].Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.SkyBlue);
+                ws.Cells["A3:K3"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+                ws.Cells["A3:K3"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+
+                ws.Cells["A3"].LoadFromDataTable(datatable, true);
+                ws.Cells["A3:L3"].Style.Font.Bold = true;
+                ws.Cells["A3:L3"].Style.Font.Size = 12;
+                ws.Cells["A3:L3"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                ws.Cells["A3:L3"].Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.SkyBlue);
+                ws.Cells["A3:L3"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+                ws.Cells["A3:L3"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+
+                ws.Cells["A3"].LoadFromDataTable(datatable, true);
+                ws.Cells["A3:M3"].Style.Font.Bold = true;
+                ws.Cells["A3:M3"].Style.Font.Size = 12;
+                ws.Cells["A3:M3"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                ws.Cells["A3:M3"].Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.SkyBlue);
+                ws.Cells["A3:M3"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+                ws.Cells["A3:M3"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+
+                ws.Cells["A3"].LoadFromDataTable(datatable, true);
+                ws.Cells["A3:N3"].Style.Font.Bold = true;
+                ws.Cells["A3:N3"].Style.Font.Size = 12;
+                ws.Cells["A3:N3"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                ws.Cells["A3:N3"].Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.SkyBlue);
+                ws.Cells["A3:N3"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+                ws.Cells["A3:N3"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
 
                 pck.Save();
                 fileContents = pck.GetAsByteArray();
