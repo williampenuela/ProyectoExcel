@@ -16,7 +16,7 @@
     <input type="file" id="input" accept=".xls,.xlsx,.ods" style="float:left;" />
     <button id="btnSave" class="btn btn-primary" style="float:right;margin-right:10px;">Guardar</button>
 </div>
-
+<br />
 <table id="tblMain" class="table table-bordered table-striped table-responsive">
     <thead ></thead>
     <tbody ></tbody>
@@ -59,7 +59,7 @@
                     $("#input").val("");
                 });
             }
-
+            // manda los parametros a la clase GenerateAndDownloadExcel del controlador
             function GenerateAndDownloadExcel() {
             var IdCombustible = 0,
                 combustible = ""
@@ -148,6 +148,7 @@
                 document.body.removeChild(link);
             }
 
+            //Manda los parametros del boton a la clase SaveCombustibles del controlador
             function Save() {
                 if (_oCombustibles.length > 0) {
                     var ajaxRequest = $.ajax({

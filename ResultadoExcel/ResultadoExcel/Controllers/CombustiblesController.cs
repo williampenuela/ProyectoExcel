@@ -12,23 +12,25 @@ namespace ResultadoExcel.Controllers
         List<Combustible> _combustibles = new List<Combustible>();
 
 
-        public CombustiblesController(ICombustibleService ENE_CombustibleService)
+        public CombustiblesController(ICombustibleService combustibleService)
         {
-            _combustibleService = ENE_CombustibleService;
+            _combustibleService = combustibleService;
         }
 
-
+        // Vista
         public IActionResult Index()
         {
             return View();
         }
 
-        public JsonResult SaveCombustibles (List<Combustible> ENE_Combustible)
+        // Recibe el json del Html 
+        public JsonResult SaveCombustibles(List<Combustible> combustibles)
         {
-            _combustibles = _combustibleService.SaveCombustibles(ENE_Combustible);
+            _combustibles = _combustibleService.SaveCombustibles(combustibles);
             return Json(_combustibles);
         }
 
+        // Creacion del Excel
         public string GenerateAndDownloadExcel (int IdCombustible, string combustible)
         {
             List<Combustible> ENE_Combustibles = _combustibleService.GetCombustibles();

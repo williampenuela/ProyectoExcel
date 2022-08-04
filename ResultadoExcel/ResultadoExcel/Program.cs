@@ -5,6 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+// Se agregaron estos builder para que el proyecto inicie correctamente
 builder.Services.AddDbContext<DatabaseContext>();
 builder.Services.AddScoped<ICombustibleService, CombustibleService>();
 

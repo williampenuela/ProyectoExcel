@@ -5,6 +5,7 @@ namespace ResultadoExcel.Models
 {
     public static class CommonMethods
     {
+        // Convierte los datos de la tabla a un datatable
         public static DataTable ConvertListToDataTable<T>(this IList<T> data)
         {
             PropertyDescriptorCollection props =
